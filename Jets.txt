@@ -1,0 +1,7 @@
+ Type: A10	 WarthogSpeed:439 mph	Tank Capcity: 800 miles	Cost: $18,800,000
+Type:(Lockheed Martin f-22)	Speed: 1498mph	Tank Capacity:1600 miles	Cost:$334,000,000
+ Google500Speed: 1500 mphTankCapacity: 750 milesCost: $20,000,000 
+ Boeing 747Speed: 570 mphTank Length: 15,000 milesCost: 367,000,000
+Cargo,Boeing Globemaster,590,6230,218000000
+
+
