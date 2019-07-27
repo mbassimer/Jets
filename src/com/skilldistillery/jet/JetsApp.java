@@ -25,7 +25,7 @@ public class JetsApp {
 	}
 
 	public void Menu() {
-		System.out.println("Welcome to the Jet Selector Application");
+		System.out.println("Welcome please look at our hangar");
 		InfoGraphic();
 		
 

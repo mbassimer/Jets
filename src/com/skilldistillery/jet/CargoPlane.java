@@ -10,7 +10,10 @@ public class CargoPlane extends Jet implements CargoCarrier {
 		
 		
 		
+		
 	}
+
+	
 
 	private void flyAll() {
 		// TODO Auto-generated method stub

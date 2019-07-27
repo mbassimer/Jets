@@ -47,6 +47,7 @@ public abstract class Jet {
 	public void setRange(int range) {
 		this.range = range;
 	}
+	
 
 	public long getPrice() {
 		return price;
