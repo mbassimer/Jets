@@ -77,13 +77,13 @@ public class JetsApp {
 			}
 public void InfoGraphic() {
 			System.out.println("*****************************************");
-			System.out.println("*       	Jet Selector		*");
+			System.out.println("*       	Vehicle Selector	*");
 			System.out.println("*                                    	*");
 			System.out.println("*  Please choose from our selection   	*");
 			System.out.println("*                                    	*");
 			System.out.println("*         1)List Fleet          	*");
-			System.out.println("*         2)Fly all Jets               	*");
-			System.out.println("*         3)View Fastest Jet            *");
+			System.out.println("*         2)Fly all Vehicles           	*");
+			System.out.println("*         3)View Fastest Vehicles       *");
 			System.out.println("*         4)View Jet with longest range *");
 			System.out.println("*         5)Load All Cargo Jets  	*");
 			System.out.println("*         6)DogFight!          		*");

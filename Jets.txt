@@ -3,3 +3,4 @@ Fighter, f-22, 1498, 16000, 334000
 Fighter, Google500, 1500, 75000, 200000 
 Cargo, 747Max, 570, 15000, 367000
 Cargo, GlobeMaster, 590, 6230, 218000
+Luxury, HotAirBalloon, 25, 100000, 1000

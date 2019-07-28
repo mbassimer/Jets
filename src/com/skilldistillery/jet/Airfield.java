@@ -1,5 +1,5 @@
 package com.skilldistillery.jet;
-
+import java.util.Scanner;
 import java.io.*;
 import java.util.*;
 
@@ -7,7 +7,8 @@ public class Airfield {
 
 	String file = "Jets.txt";
 	List<Jet> ParkingLot;
-
+	String line;
+	private String Scanner;
 	public Airfield() {
 		ParkingLot = new ArrayList<Jet>();
 		lookupRecords(file);
@@ -29,9 +30,16 @@ public class Airfield {
 					ParkingLot.add(j);
 				}
 
-				if (line.contains("Cargo")) {
+				else if (line.contains("Cargo")) {
 					CargoPlane j = new CargoPlane(type, model, speed, range, price);
 					ParkingLot.add(j);
+				}
+				else if (line.contains("Luxury")) {
+					LuxuryPlane j = new LuxuryPlane(type,model,speed, range,price);
+					ParkingLot.add(j);
+					
+				}else {
+				 System.out.println("This vehicle is not a jet or luxury plane");
 				}
 			}
 
@@ -111,24 +119,68 @@ public class Airfield {
 
 	public void loadAll() {
 		 for (Jet jet : ParkingLot) {
-			 if ( jet.getType().contentEquals("Cargo")); {
-//				 Cargoier();
-			
-		}
-		}
+			 if(jet instanceof CargoCarrier) {
+			 System.out.println(jet.toString());
+			 System.out.println("This plane is ready to be loaded....");
+			 System.out.println("Please begin loading when ready. ");
+		 }
 
+		 }
 	}
-
 	public void fightAll() {
+		for (Jet jet : ParkingLot) {
+			 if(jet instanceof CombatReady) {
+			 System.out.println(jet.toString());
+			 System.out.println("This plane is ready to fight");
+			 System.out.println("Don't mess with Me!");
+			 
+		 }
+
+		 }
 
 	}
 
 	public void addJet() {
+		
+		Scanner kb= new Scanner(System.in);
+		 
+			
+			System.out.println("Please enter a jet type from Fighter, Cargo, or Luxury: ");
+			String type = kb.next();
+			System.out.println("Enter a model: ");
+			String model = kb.next();
+			System.out.println("Enter in the max speed:" );
+			double speed = kb.nextDouble();
+			System.out.println("Enter a range :" );
+			int range = kb.nextInt();
+			System.out.println("How much is the plane worth?");
+			long price = kb.nextLong();
+			
+			if (type.contains("Fighter")) {
+				Jet j = new Fighter(type, model, speed, range, price);
+				ParkingLot.add(j);
+			}
 
-	}
+			else if (type.contains("Cargo")) {
+				CargoPlane j = new CargoPlane(type, model, speed, range, price);
+				ParkingLot.add(j);
+			}
+			else if (type.contains("Luxury")) {
+				LuxuryPlane j = new LuxuryPlane(type,model,speed, range,price);
+				ParkingLot.add(j);
+				
+			}else {
+			 System.out.println("This vehicle is not a jet or luxury plane");
+			}
+		}
+		
+
+	
 
 	public void removeJet() {
 
+		
+		
 	}
 
 }
