@@ -6,12 +6,12 @@ import java.util.*;
 public class Airfield {
 
 	String file = "Jets.txt";
-	List<Jet> ParkingLot;
+	List<jet> ParkingLot;
 	String line;
 	private String Scanner;
 
 	public Airfield() {
-		ParkingLot = new ArrayList<Jet>();
+		ParkingLot = new ArrayList<jet>();
 		lookupRecords(file);
 	}
 
@@ -27,7 +27,7 @@ public class Airfield {
 				long price = Long.parseLong(jetData[4].trim());
 
 				if (line.contains("Fighter")) {
-					Jet j = new Fighter(type, model, speed, range, price);
+					jet j = new Fighter(type, model, speed, range, price);
 					ParkingLot.add(j);
 				}
 
@@ -59,35 +59,37 @@ public class Airfield {
 	}
 
 	public void displayAll() {
-//		System.out.println("The jets in the hanger are\n " +  ParkingLot);
-		for (Jet jet : ParkingLot) {
-
-			System.out.println(jet);
+		System.out.println("The jets in the hanger are\n " +  ParkingLot);
+		for (jet jet : ParkingLot) {
+			System.out.println(ParkingLot);
 		}
 
 	}
+	
+	
+	
+	public  void flyAll() {
 
-	public void flyAll() {
-
-		for (Jet jet : ParkingLot) {
+		for (jet jet : ParkingLot) {
 			double timeLeft = jet.getRange() / jet.getSpeed();
 			double roundOff = Math.round(timeLeft * 100) / 100;
-			System.out
-					.println(jet.getModel() + "  is in the air" + " and has\n " + roundOff + " hours left in the air");
-
+			
+			System.out.println(jet.fly() + "  is in the air" + " and has\n " + roundOff + " hours left in the air");
 		}
 	}
+
+	
 
 	public void fastestJet() {
 		double fastest = 0;
 
-		for (Jet jet : ParkingLot) {
+		for (jet jet : ParkingLot) {
 			if (jet.getSpeed() > fastest) {
 				fastest = jet.getSpeed();
 
 			}
 		}
-		for (Jet jet2 : ParkingLot) {
+		for (jet jet2 : ParkingLot) {
 			if (fastest == jet2.getSpeed()) {
 
 				System.out.println(jet2.toString() + "can fly the fastest!");
@@ -99,14 +101,14 @@ public class Airfield {
 	public void longestRange() {
 		double longestRange = 0;
 
-		for (Jet jet : ParkingLot) {
+		for (jet jet : ParkingLot) {
 			if (jet.getRange() > longestRange) {
 				longestRange = jet.getRange();
 
 			}
 		}
 
-		for (Jet jet2 : ParkingLot) {
+		for (jet jet2 : ParkingLot) {
 			if (longestRange == jet2.getRange()) {
 
 				System.out.println(jet2.toString() + " can fly the farthest!");
@@ -117,25 +119,28 @@ public class Airfield {
 	}
 
 	public void loadAll() {
-		for (Jet jet : ParkingLot) {
+		for (jet jet : ParkingLot) {
 			if (jet instanceof CargoCarrier) {
+				CargoCarrier.Loading();
 				System.out.println(jet.toString());
-				System.out.println("This plane is ready to be loaded....");
-				System.out.println("Please begin loading when ready. ");
+				
+
 			}
 
 		}
 	}
 
+
 	public void fightAll() {
-		for (Jet jet : ParkingLot) {
+		for (jet jet : ParkingLot) {
 			if (jet instanceof CombatReady) {
 				System.out.println(jet.toString());
-				System.out.println("This plane is ready to fight");
-				System.out.println("Don't mess with Me!");
-
+				CombatReady.dogFight();
 			}
 
+			if (jet instanceof LoadingBombs) {
+				LoadingBombs.bombsAway();
+			}
 		}
 
 	}
@@ -156,7 +161,7 @@ public class Airfield {
 		long price = kb.nextLong();
 
 		if (type.contains("Fighter")) {
-			Jet j = new Fighter(type, model, speed, range, price);
+			jet j = new Fighter(type, model, speed, range, price);
 			ParkingLot.add(j);
 		}
 
@@ -181,12 +186,19 @@ public class Airfield {
 				System.out.println((i + 1) + " " + ParkingLot.get(i).getModel());
 			}
 			int choice = kb.nextInt();
-			
-			ParkingLot.remove(choice - 1);
-			System.out.println("New inventory: ");
-			for (Jet jet : ParkingLot) {
 
-				System.out.println(jet);
+			if (choice != ParkingLot.size()) {
+				System.out.println("Beg your pardon, I don't know what you intended sir. ");
+			} else {
+
+				ParkingLot.remove(choice - 1);
+				System.out.println("New inventory: ");
+				for (jet jet : ParkingLot) {
+
+					System.out.println(jet);
+
+				}
+
 			}
 
 		}

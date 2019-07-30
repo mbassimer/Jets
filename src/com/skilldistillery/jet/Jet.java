@@ -1,20 +1,22 @@
 package com.skilldistillery.jet;
 
-public abstract class Jet {
-	
+public abstract class jet {
+
 	private String Type;
 	private String Model;
 	private double speed;
 	private int range;
 	private long price;
 
-	protected Jet(String Type,String Model, double speed, int range, long price) {
+	protected jet(String Type, String Model, double speed, int range, long price) {
 		this.Type = Type;
 		this.Model = Model;
 		this.speed = speed;
 		this.range = range;
 		this.price = price;
 	}
+	
+	
 
 	public String getType() {
 		return Type;
@@ -47,7 +49,6 @@ public abstract class Jet {
 	public void setRange(int range) {
 		this.range = range;
 	}
-	
 
 	public long getPrice() {
 		return price;
@@ -64,9 +65,10 @@ public abstract class Jet {
 				.append(", range=").append(range).append(", price=").append(price).append("]");
 		return builder.toString();
 	}
-	
-	
 
+
+
+public abstract String fly();
 
 
 }

@@ -1,9 +1,10 @@
 package com.skilldistillery.jet;
 
-public interface CargoCarrier  {
+abstract interface CargoCarrier  {
 	
 	public static void Loading() {
 		
+		System.out.println("Cargo is loaded");
 		
 	}
 

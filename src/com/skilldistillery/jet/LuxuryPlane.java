@@ -1,17 +1,15 @@
 package com.skilldistillery.jet;
 
-public class LuxuryPlane extends Jet {
+public class LuxuryPlane extends jet {
 
 	public LuxuryPlane(String Type, String Model, double speed, int range, long price) {
 		super(Type, Model, speed, range, price);
-	
-		flyAll();
-		
+
 	}
 
-	private void flyAll() {
-		// TODO Auto-generated method stub
-		
+	public String fly() {
+
+		return ("We're taking off to cruise at a low speed, ready for picturesque views");
 	}
 
 }

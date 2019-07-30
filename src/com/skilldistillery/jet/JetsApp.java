@@ -27,13 +27,12 @@ public class JetsApp {
 	public void Menu() {
 		System.out.println("Welcome please look at our hangar");
 		InfoGraphic();
-		
 
 		boolean setMenu = true;
 		int userChoice = 0;
 
-
 		while (userChoice != 9) {
+
 			System.out.println("Please enter a choice from our menu");
 			userChoice = kb.nextInt();
 
@@ -72,26 +71,32 @@ public class JetsApp {
 			default:
 				System.out.println("That is not an option, sorry! :( ");
 			}
+			
+			if (setMenu != false) {
+				InfoGraphic();
+			}
 		}
-
-			}
-public void InfoGraphic() {
-			System.out.println("*****************************************");
-			System.out.println("*       	Vehicle Selector	*");
-			System.out.println("*                                    	*");
-			System.out.println("*  Please choose from our selection   	*");
-			System.out.println("*                                    	*");
-			System.out.println("*         1)List Fleet          	*");
-			System.out.println("*         2)Fly all Vehicles           	*");
-			System.out.println("*         3)View Fastest Vehicles       *");
-			System.out.println("*         4)View Jet with longest range *");
-			System.out.println("*         5)Load All Cargo Jets  	*");
-			System.out.println("*         6)DogFight!          		*");
-			System.out.println("*         7)Add a jet to Fleet         	*");
-			System.out.println("*         8)Remove a jet from fleet    	*");
-			System.out.println("*         9)Quit                      	*");
-			System.out.println("*****************************************");
-			System.out.println("*****************************************");
-			}
+	}
 	
+	
+
+	public void InfoGraphic() {
+		System.out.println("*****************************************");
+		System.out.println("*       	Vehicle Selector	*");
+		System.out.println("*                                    	*");
+		System.out.println("*  Please choose from our selection   	*");
+		System.out.println("*                                    	*");
+		System.out.println("*         1)List Fleet          	*");
+		System.out.println("*         2)Fly the fighters           	*");
+		System.out.println("*         3)View Fastest Vehicles       *");
+		System.out.println("*         4)View Jet with longest range *");
+		System.out.println("*         5)Load All Cargo Jets  	*");
+		System.out.println("*         6)DogFight!          		*");
+		System.out.println("*         7)Add a jet to Fleet         	*");
+		System.out.println("*         8)Remove a jet from fleet     *");
+		System.out.println("*         9)Exit    			*");
+		System.out.println("*****************************************");
+		System.out.println("*****************************************");
+	}
+
 }
