@@ -8,7 +8,6 @@ public class Airfield {
 	String file = "Jets.txt";
 	List<jet> ParkingLot;
 	String line;
-	private String Scanner;
 
 	public Airfield() {
 		ParkingLot = new ArrayList<jet>();
@@ -60,11 +59,10 @@ public class Airfield {
 
 	public void displayAll() {
 		System.out.println("The jets in the hanger are\n " +  ParkingLot);
-		for (jet jet : ParkingLot) {
 			System.out.println(ParkingLot);
 		}
 
-	}
+	
 	
 	
 	
@@ -175,6 +173,7 @@ public class Airfield {
 		} else {
 			System.out.println("This vehicle is not a jet or luxury plane");
 		}
+		kb.close();
 	}
 
 	public void removeJet() {
@@ -202,7 +201,7 @@ public class Airfield {
 			}
 
 		}
-
+		kb.close();
 	}
 
 }
