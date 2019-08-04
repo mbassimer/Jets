@@ -1,6 +1,6 @@
 package com.skilldistillery.jet;
 
-public class Fighter extends jet implements CombatReady, LoadingBombs {
+public class Fighter extends Jet implements CombatReady, LoadingBombs {
 
 
 
@@ -17,7 +17,7 @@ public class Fighter extends jet implements CombatReady, LoadingBombs {
 	public String  fly() {
 		
 
-		return("Up in the air, and ready to go fasssssssssssssssst ");
+		return(" Up in the air, and ready to go fasssssssssssssssst ");
 		
 	}
 

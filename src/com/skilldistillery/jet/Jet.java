@@ -1,6 +1,6 @@
 package com.skilldistillery.jet;
 
-public abstract class jet {
+public abstract class Jet {
 
 	private String Type;
 	private String Model;
@@ -8,7 +8,7 @@ public abstract class jet {
 	private int range;
 	private long price;
 
-	protected jet(String Type, String Model, double speed, int range, long price) {
+	protected Jet(String Type, String Model, double speed, int range, long price) {
 		this.Type = Type;
 		this.Model = Model;
 		this.speed = speed;

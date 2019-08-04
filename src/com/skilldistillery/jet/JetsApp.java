@@ -52,10 +52,11 @@ public class JetsApp {
 				airfield.fightAll();
 				break;
 			case 7:
-				airfield.addJet();
+				airfield.addJet(kb);
+				
 				break;
 			case 8:
-				airfield.removeJet();
+				airfield.removeJet(kb);
 				break;
 			case 9:
 				userChoice = 9;
@@ -84,7 +85,7 @@ public class JetsApp {
 		System.out.println("*                                    	*");
 		System.out.println("*         1)List Fleet          	*");
 		System.out.println("*         2)Fly the fighters           	*");
-		System.out.println("*         3)View Fastest Vehicles       *");
+		System.out.println("*         3)View Fastest Planes         *");
 		System.out.println("*         4)View Jet with longest range *");
 		System.out.println("*         5)Load All Cargo Jets  	*");
 		System.out.println("*         6)DogFight!          		*");
@@ -94,5 +95,6 @@ public class JetsApp {
 		System.out.println("*****************************************");
 		System.out.println("*****************************************");
 	}
+	
 
 }
